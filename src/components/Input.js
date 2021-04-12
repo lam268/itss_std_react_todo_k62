@@ -1,16 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 function Input({ onAdd }) {
-    const [state, setState] = React.useState({
-        value: ''
-    })
+    const [state, setState] = React.useState({})
 
     function handleChange(event) {
-        setState({ value: event.target.value })
+        setState( event.target.value )
     }
 
     function handleSubmit(event) {
         onAdd(state);
+        event.preventDefault();
     }
 
     return (
